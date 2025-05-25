@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia Mairena - Galería de Fotos</title>
+    <meta name="description" content="Descubre la galería de fotos de la Familia Mairena, con momentos especiales y recuerdos familiares únicos.">
+    <meta name="keywords" content="Familia Mairena, galería de fotos, recuerdos familiares, álbum de fotos, momentos especiales">
+    <meta name="author" content="Familia Mairena">
+    <link rel="canonical" href="https://los-mairenas.netlify.app/" />
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Familia Mairena - Galería de Fotos">
+    <meta property="og:description" content="Descubre la galería de fotos de la Familia Mairena, con momentos especiales y recuerdos familiares únicos.">
+    <meta property="og:image" content="https://los-mairenas.netlify.app/convertidas_webp/containerheaderfondo.webp">
+    <meta property="og:url" content="https://los-mairenas.netlify.app/">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="containerheaderfondo">
+            <div class="masking-container">
+                <h1 class="masked-text">Familia Mairena</h1>
+            </div>
+            <img src="convertidas_webp/containerheaderfondo.webp" alt="Foto principal de la Familia Mairena" class="headerfondo">
+        </div>
+    </header>
+    <main>
+        <section class="gallery">
+            <h2>Galería de Fotos Familiares</h2>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Familia Mairena. Todos los derechos reservados.</p>
+    </footer>
+    <!-- Modal para imagen ampliada -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close">×</span>
+        <img class="modal-image" id="modalImage" alt="Foto ampliada de la Familia Mairena">
+        <a class="modal-download" id="downloadButton" download>Descargar Imagen</a>
+    </div>
+    <script>
+        const images = [
+            'IMG-20250331-WA0048.webp',
+            'IMG-20250421-WA0029.webp',
+            'IMG-20250421-WA0037.webp',
+            'IMG-20250512-WA0006.webp',
+            'IMG-20250515-WA0013.webp',
+            'IMG-20250515-WA0014.webp',
+            'IMG-20250515-WA0015.webp',
+            'IMG-20250515-WA0016.webp',
+            'IMG-20250515-WA0017.webp',
+            'IMG-20250515-WA0018.webp',
+            'IMG-20250515-WA0019.webp',
+            'IMG-20250515-WA0020.webp',
+            'IMG-20250515-WA0021.webp',
+            'IMG-20250515-WA0022.webp',
+            'IMG-20250515-WA0023.webp',
+            'IMG-20250515-WA0024.webp',
+            'IMG-20250515-WA0025.webp',
+            'IMG-20250515-WA0026.webp',
+            'IMG-20250515-WA0027.webp',
+            'IMG-20250515-WA0028.webp',
+            'IMG-20250515-WA0029.webp',
+            'IMG-20250515-WA0030.webp',
+            'IMG-20250515-WA0031.webp',
+            'IMG-20250515-WA0032.webp',
+            'IMG-20250515-WA0033.webp',
+            'IMG-20250515-WA0034.webp',
+            'IMG-20250515-WA0035.webp',
+            'IMG-20250515-WA0036.webp',
+            'IMG-20250515-WA0037.webp',
+            'IMG-20250515-WA0038.webp',
+            'IMG-20250515-WA0039.webp',
+            'IMG-20250515-WA0040.webp',
+            'IMG-20250515-WA0041.webp',
+            'IMG-20250515-WA0043.webp',
+            'IMG-20250515-WA0044.webp',
+            'IMG-20250515-WA0045.webp',
+            'IMG-20250515-WA0046.webp',
+            'IMG-20250515-WA0047.webp',
+            'IMG-20250515-WA0048.webp',
+            'IMG-20250515-WA0049.webp',
+            'IMG-20250515-WA0050.webp',
+            'IMG-20250515-WA0051.webp',
+            'IMG-20250515-WA0052.webp',
+            'IMG-20250515-WA0053.webp',
+            'IMG-20250515-WA0054.webp',
+            'IMG-20250515-WA0055.webp',
+            'IMG-20250515-WA0056.webp',
+            'IMG-20250515-WA0057.webp',
+            'IMG-20250515-WA0058.webp',
+            'IMG-20250515-WA0059.webp',
+            'IMG-20250515-WA0060.webp',
+            'IMG-20250515-WA0061.webp',
+            'IMG-20250515-WA0062.webp',
+            'IMG-20250515-WA0063.webp',
+            'IMG-20250515-WA0064.webp',
+            'IMG-20250515-WA0065.webp',
+            'IMG-20250515-WA0066.webp',
+            'IMG-20250515-WA0067.webp',
+            'IMG-20250515-WA0068.webp',
+            'IMG-20250515-WA0069.webp',
+            'IMG-20250515-WA0070.webp',
+            'IMG-20250515-WA0071.webp',
+            'IMG-20250515-WA0072.webp',
+            'IMG-20250515-WA0073.webp',
+            'IMG-20250515-WA0074.webp',
+            'IMG-20250515-WA0075.webp',
+            'IMG-20250515-WA0076.webp',
+            'IMG-20250515-WA0077.webp',
+            'IMG-20250515-WA0078.webp',
+            'IMG-20250515-WA0079.webp',
+            'IMG-20250515-WA0080.webp',
+            'IMG-20250515-WA0081.webp',
+            'IMG-20250515-WA0082.webp',
+            'IMG-20250515-WA0083.webp',
+            'IMG-20250515-WA0084.webp',
+            'IMG-20250515-WA0085.webp',
+            'IMG-20250515-WA0086.webp',
+            'IMG-20250515-WA0087.webp',
+            'IMG-20250515-WA0088.webp',
+            'IMG-20250515-WA0089.webp',
+            'IMG-20250515-WA0090.webp',
+            'IMG-20250515-WA0091.webp',
+            'IMG-20250515-WA0092.webp',
+            'IMG-20250515-WA0093.webp',
+            'IMG-20250515-WA0094.webp',
+            'IMG-20250515-WA0095.webp',
+            'IMG-20250515-WA0096.webp',
+            'IMG-20250515-WA0097.webp',
+            'IMG-20250515-WA0098.webp',
+            'IMG-20250515-WA0099.webp',
+            'IMG-20250515-WA0100.webp',
+            'IMG-20250515-WA0101.webp',
+            'IMG-20250515-WA0102.webp',
+            'IMG-20250515-WA0105.webp'
+        ];
+
+        const gallery = document.querySelector('.gallery');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const downloadButton = document.getElementById('downloadButton');
+        const closeModal = document.querySelector('.modal-close');
+        let activeCard = null;
+
+        // Función para abrir el modal con la imagen ampliada
+        function openModal(src, alt) {
+            modalImage.src = src;
+            modalImage.alt = alt;
+            downloadButton.href = src;
+            downloadButton.download = src.split('/').pop();
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Función para cerrar el modal
+        function closeModalFunc() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            if (activeCard) {
+                activeCard.classList.remove('active');
+                activeCard = null;
+            }
+        }
+
+        // Eventos para cerrar el modal
+        closeModal.addEventListener('click', closeModalFunc);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalFunc();
+            }
+        });
+
+        // Cerrar el modal con la tecla Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                closeModalFunc();
+            }
+        });
+
+        // Generar tarjetas de la galería
+        images.forEach((image, index) => {
+            setTimeout(() => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                    <img src="convertidas_webp/${image}" alt="Foto familiar ${index + 1} - Familia Mairena" class="card-image" loading="lazy">
+                    <div class="card-overlay">
+                        <h3 class="card-title">Imagen #${index + 1}</h3>
+                    </div>
+                `;
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (activeCard && activeCard !== card) {
+                        activeCard.classList.remove('active');
+                    }
+                    card.classList.toggle('active');
+                    activeCard = card.classList.contains('active') ? card : null;
+                    const img = card.querySelector('.card-image');
+                    openModal(img.src, img.alt);
+                });
+                gallery.appendChild(card);
+            }, index * 300);
+        });
+
+        // Generar sitemap.xml dinámicamente
+        function generateSitemap() {
+            const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://los-mairenas.netlify.app/</loc>
+        <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    ${images.map((image, index) => `
+        <url>
+            <loc>https://los-mairenas.netlify.app/image/${index + 1}</loc>
+            <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.8</priority>
+        </url>
+    `).join('')}
+</urlset>`;
+            const blob = new Blob([sitemap], { type: 'application/xml' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'sitemap.xml';
+            link.click();
+            URL.revokeObjectURL(link.href);
+        }
+
+        // Descomenta para generar el sitemap localmente
+        // generateSitemap();
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /convertidas_webp/
+Allow: /
+
+Sitemap: https://los-mairenas.netlify.app/sitemap.xml
